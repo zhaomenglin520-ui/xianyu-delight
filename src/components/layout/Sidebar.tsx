@@ -73,7 +73,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
         </div>
         {!collapsed && (
           <div className="animate-fade-in overflow-hidden">
-            <span className="font-bold text-foreground dark:text-white text-sm whitespace-nowrap">
+            <span className="font-semibold text-foreground dark:text-white text-lg whitespace-nowrap">
               闲鱼智能管理系统
             </span>
           </div>
