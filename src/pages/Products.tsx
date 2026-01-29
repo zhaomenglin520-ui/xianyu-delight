@@ -88,7 +88,7 @@ const statusConfig = {
 
 const Products = () => {
   return (
-    <MainLayout title="商品管理">
+    <MainLayout>
       {/* Toolbar */}
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <div className="relative flex-1">
