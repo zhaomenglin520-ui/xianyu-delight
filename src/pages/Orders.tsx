@@ -79,7 +79,7 @@ const statusConfig = {
 
 const Orders = () => {
   return (
-    <MainLayout title="订单管理">
+    <MainLayout>
       {/* Toolbar */}
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <div className="relative flex-1">
