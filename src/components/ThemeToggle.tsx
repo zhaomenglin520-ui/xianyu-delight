@@ -46,17 +46,15 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "h-10 w-10 rounded-full backdrop-blur-sm border transition-all duration-300",
-        "bg-white/20 border-white/30 hover:bg-white/40 hover:scale-105",
-        "dark:bg-white/10 dark:border-white/20 dark:hover:bg-white/20",
-        "shadow-lg hover:shadow-xl",
+        "rounded-full transition-all duration-300",
+        "hover:bg-accent/60 dark:hover:bg-accent/30",
         className
       )}
     >
       {isDark ? (
-        <Sun className="h-5 w-5 text-amber-300 transition-transform duration-300" />
+        <Sun className="h-5 w-5 text-amber-400 transition-transform duration-300" />
       ) : (
-        <Moon className="h-5 w-5 text-slate-700 transition-transform duration-300" />
+        <Moon className="h-5 w-5 text-muted-foreground transition-transform duration-300" />
       )}
       <span className="sr-only">切换主题</span>
     </Button>
