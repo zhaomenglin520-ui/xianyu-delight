@@ -176,7 +176,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                             <Button
                               variant="ghost"
                               size="icon"
-                              className="h-8 w-8"
+                              className="h-8 w-8 text-sky-500 hover:text-sky-600 hover:bg-sky-500/20 hover:scale-110 transition-all duration-200"
                               disabled={isLoading}
                               onClick={() => handleAction(account.id, "refresh", () => {})}
                             >
@@ -195,7 +195,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                             <Button
                               variant="ghost"
                               size="icon"
-                              className="h-8 w-8"
+                              className="h-8 w-8 text-amber-500 hover:text-amber-600 hover:bg-amber-500/20 hover:scale-110 transition-all duration-200"
                               disabled={!isConnected || isLoading}
                               onClick={() => handleAction(account.id, "sparkle", () => {})}
                             >
@@ -214,7 +214,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                             <Button
                               variant="ghost"
                               size="icon"
-                              className="h-8 w-8"
+                              className="h-8 w-8 text-blue-500 hover:text-blue-600 hover:bg-blue-500/20 hover:scale-110 transition-all duration-200"
                               onClick={() => onEdit(account)}
                             >
                               <Edit className="w-4 h-4" />
@@ -229,7 +229,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-8 w-8 text-yellow-600 hover:text-yellow-700"
+                                className="h-8 w-8 text-yellow-500 hover:text-yellow-600 hover:bg-yellow-500/20 hover:scale-110 transition-all duration-200"
                                 disabled={isLoading}
                                 onClick={() => handleAction(account.id, "stop", () => onToggleStatus(account.id, false))}
                               >
@@ -248,7 +248,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-8 w-8 text-green-600 hover:text-green-700"
+                                className="h-8 w-8 text-green-500 hover:text-green-600 hover:bg-green-500/20 hover:scale-110 transition-all duration-200"
                                 disabled={isLoading}
                                 onClick={() => handleAction(account.id, "start", () => onToggleStatus(account.id, true))}
                               >
@@ -270,7 +270,7 @@ export function AccountList({ accounts, onEdit, onDelete, onToggleStatus }: Acco
                                 <Button
                                   variant="ghost"
                                   size="icon"
-                                  className="h-8 w-8 text-destructive hover:text-destructive"
+                                  className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/20 hover:scale-110 transition-all duration-200"
                                 >
                                   <Trash2 className="w-4 h-4" />
                                 </Button>
