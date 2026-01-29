@@ -14,15 +14,26 @@ export interface ConversationMessage {
     itemId?: string;
 }
 
+// 用于组件的 Message 类型（简化版）
+export interface Message {
+    id: string;
+    content: string;
+    direction: 'incoming' | 'outgoing';
+    senderName: string;
+    msgTime: string;
+    msgId: string;
+    itemId?: string;
+}
+
 export interface Conversation {
     accountId: string;
     accountNickname?: string;
     chatId: string;
-    userId: string;
+    userId?: string;
     userName: string;
     userAvatar?: string;
-    lastMessage: string;
-    lastTime: number;
+    lastMessage?: string;
+    lastTime?: string | number;
     unread: number;
     messageCount?: number;
     messages?: ConversationMessage[];
