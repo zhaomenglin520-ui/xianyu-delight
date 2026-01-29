@@ -1,16 +1,9 @@
-import { FileQuestion, Home } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { ShieldAlert, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
+const Forbidden = () => {
   return (
     <div
       className={cn(
@@ -32,29 +25,29 @@ const NotFound = () => {
       />
 
       {/* 装饰性光晕 */}
-      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-yellow-500/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-orange-500/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-red-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-pink-500/20 rounded-full blur-[100px] pointer-events-none" />
 
       {/* 内容 */}
       <div className="relative z-10 text-center px-4">
         {/* 图标 */}
         <div className="mb-6 flex justify-center">
-          <div className="w-24 h-24 rounded-2xl bg-yellow-500/10 dark:bg-yellow-500/20 flex items-center justify-center">
-            <FileQuestion className="w-12 h-12 text-yellow-500" />
+          <div className="w-24 h-24 rounded-2xl bg-red-500/10 dark:bg-red-500/20 flex items-center justify-center">
+            <ShieldAlert className="w-12 h-12 text-red-500" />
           </div>
         </div>
 
         {/* 错误代码 */}
-        <h1 className="text-8xl font-bold text-yellow-500 mb-4">404</h1>
+        <h1 className="text-8xl font-bold text-red-500 mb-4">403</h1>
 
         {/* 标题 */}
         <h2 className="text-2xl font-semibold text-foreground dark:text-white mb-2">
-          页面不存在
+          禁止访问
         </h2>
 
         {/* 描述 */}
         <p className="text-muted-foreground dark:text-white/60 mb-8 text-lg">
-          这里什么都没有 🕳️
+          你知道的太多了 🤫
         </p>
 
         {/* 返回按钮 */}
@@ -77,4 +70,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Forbidden;
