@@ -113,10 +113,10 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                       ]
                 )}
               >
-                <item.icon className="w-5 h-5 flex-shrink-0" />
+                <item.icon className="w-[22px] h-[22px] flex-shrink-0" />
                 {!collapsed && (
                   <>
-                    <span className="text-sm truncate flex-1">
+                    <span className="text-[15px] truncate flex-1">
                       {item.title}
                     </span>
                     {/* 未读消息徽章 */}
