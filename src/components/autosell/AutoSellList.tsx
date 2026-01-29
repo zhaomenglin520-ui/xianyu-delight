@@ -132,7 +132,7 @@ export function AutoSellList({
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8"
+                            className="h-8 w-8 text-orange-500 hover:text-orange-600 hover:bg-orange-500/15 hover:scale-110 transition-all duration-200"
                             onClick={() => onManageStock(rule)}
                           >
                             <Database className="w-4 h-4" />
@@ -141,7 +141,7 @@ export function AutoSellList({
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-8 w-8"
+                          className="h-8 w-8 text-blue-500 hover:text-blue-600 hover:bg-blue-500/15 hover:scale-110 transition-all duration-200"
                           onClick={() => onEdit(rule)}
                         >
                           <Edit className="w-4 h-4" />
@@ -149,7 +149,7 @@ export function AutoSellList({
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/10"
+                          className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/15 hover:scale-110 transition-all duration-200"
                           onClick={() => onDelete(rule)}
                         >
                           <Trash2 className="w-4 h-4" />
@@ -233,7 +233,7 @@ export function AutoSellList({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/10"
+                    className="h-8 w-8 text-destructive hover:text-destructive hover:bg-destructive/15 hover:scale-110 transition-all duration-200"
                     onClick={() => onDelete(rule)}
                   >
                     <Trash2 className="w-4 h-4" />
