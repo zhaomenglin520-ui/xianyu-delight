@@ -7,6 +7,10 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Orders from "./pages/Orders";
+import Conversations from "./pages/Conversations";
+import WorkflowPage from "./pages/Workflow";
+import AutoReply from "./pages/AutoReply";
+import AutoSell from "./pages/AutoSell";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Forbidden from "./pages/Forbidden";
@@ -25,6 +29,10 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/products" element={<Products />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/conversations" element={<Conversations />} />
+            <Route path="/ship-workflow" element={<WorkflowPage />} />
+            <Route path="/auto-reply" element={<AutoReply />} />
+            <Route path="/auto-ship" element={<AutoSell />} />
             <Route path="/forbidden" element={<Forbidden />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
