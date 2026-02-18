@@ -6,28 +6,34 @@
 
 @layer base {
   :root {
-    /* Warm, professional palette inspired by Xianyu */
-    --background: 40 33% 98%;
-    --foreground: 24 10% 10%;
+    /* === 暖橙色系 - 玻璃拟态主题 === */
+    --background: 36 100% 98%;
+    --foreground: 20 14% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 24 10% 10%;
+    --card-foreground: 20 14% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 24 10% 10%;
+    --popover-foreground: 20 14% 12%;
 
-    /* Amber/Orange primary - Xianyu brand feel */
-    --primary: 28 85% 55%;
+    /* 主色 - 暖橙 */
+    --primary: 25 90% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 20% 94%;
-    --secondary-foreground: 24 10% 20%;
+    /* 辅色 - 深琥珀 */
+    --primary-deep: 18 88% 42%;
 
-    --muted: 40 15% 92%;
-    --muted-foreground: 24 8% 45%;
+    /* 亮橙 - 渐变终止色 */
+    --primary-light: 38 95% 58%;
 
-    --accent: 28 70% 95%;
-    --accent-foreground: 28 85% 40%;
+    --secondary: 36 30% 93%;
+    --secondary-foreground: 20 14% 22%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 10% 48%;
+
+    --accent: 25 80% 93%;
+    --accent-foreground: 25 90% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -36,69 +42,78 @@
     --success-foreground: 0 0% 100%;
 
     --warning: 45 93% 47%;
-    --warning-foreground: 24 10% 10%;
+    --warning-foreground: 20 14% 12%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 28 85% 55%;
+    --border: 36 25% 86%;
+    --input: 36 25% 86%;
+    --ring: 25 90% 52%;
 
     --radius: 0.75rem;
 
-    /* Sidebar */
-    --sidebar-background: 24 10% 8%;
-    --sidebar-foreground: 40 15% 85%;
-    --sidebar-primary: 28 85% 55%;
+    /* Sidebar tokens */
+    --sidebar-background: 20 14% 8%;
+    --sidebar-foreground: 36 20% 85%;
+    --sidebar-primary: 25 90% 52%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 24 15% 15%;
-    --sidebar-accent-foreground: 40 15% 95%;
-    --sidebar-border: 24 12% 18%;
-    --sidebar-ring: 28 85% 55%;
-    --sidebar-muted: 24 8% 50%;
+    --sidebar-accent: 20 15% 15%;
+    --sidebar-accent-foreground: 36 20% 95%;
+    --sidebar-border: 20 12% 18%;
+    --sidebar-ring: 25 90% 52%;
+    --sidebar-muted: 20 8% 50%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(28 85% 55%), hsl(35 90% 50%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 20% 98%));
-    
+    /* Gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(25 90% 52%), hsl(38 95% 58%));
+    --gradient-warm: linear-gradient(135deg, hsl(18 88% 42%), hsl(25 90% 52%), hsl(38 95% 58%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(36 30% 98%));
+    --gradient-bg-from: hsl(38 100% 95%);
+    --gradient-bg-via: hsl(30 80% 94%);
+    --gradient-bg-to: hsl(20 60% 96%);
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 12px -2px hsl(25 90% 52% / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 10px 25px -5px hsl(25 90% 52% / 0.18), 0 4px 10px -5px rgb(0 0 0 / 0.06);
     --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+    --shadow-orange: 0 4px 20px hsl(25 90% 52% / 0.35);
   }
 
   .dark {
-    --background: 24 10% 6%;
-    --foreground: 40 15% 95%;
+    --background: 20 18% 6%;
+    --foreground: 36 20% 94%;
 
-    --card: 24 10% 10%;
-    --card-foreground: 40 15% 95%;
+    --card: 20 15% 10%;
+    --card-foreground: 36 20% 94%;
 
-    --popover: 24 10% 10%;
-    --popover-foreground: 40 15% 95%;
+    --popover: 20 15% 10%;
+    --popover-foreground: 36 20% 94%;
 
-    --primary: 28 85% 55%;
+    --primary: 25 90% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 12% 18%;
-    --secondary-foreground: 40 15% 90%;
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 36 20% 88%;
 
-    --muted: 24 10% 15%;
-    --muted-foreground: 40 10% 55%;
+    --muted: 20 12% 15%;
+    --muted-foreground: 36 10% 55%;
 
-    --accent: 28 30% 20%;
-    --accent-foreground: 28 85% 70%;
+    --accent: 25 35% 20%;
+    --accent-foreground: 25 85% 68%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 24 12% 20%;
-    --input: 24 12% 20%;
-    --ring: 28 85% 55%;
+    --border: 20 14% 20%;
+    --input: 20 14% 20%;
+    --ring: 25 90% 52%;
 
-    --sidebar-background: 24 10% 4%;
-    --sidebar-foreground: 40 15% 85%;
-    --sidebar-accent: 24 12% 12%;
-    --sidebar-border: 24 12% 15%;
+    --sidebar-background: 20 18% 5%;
+    --sidebar-foreground: 36 20% 82%;
+    --sidebar-accent: 20 14% 12%;
+    --sidebar-border: 20 12% 15%;
+
+    --gradient-bg-from: hsl(22 50% 8%);
+    --gradient-bg-via: hsl(18 40% 10%);
+    --gradient-bg-to: hsl(28 30% 8%);
   }
 }
 
@@ -115,17 +130,21 @@
 
 @layer components {
   .stat-card {
-    @apply bg-card rounded-xl p-5 border border-border/50 transition-all duration-200;
+    @apply bg-white/70 backdrop-blur-sm rounded-2xl p-5 border border-white/60 transition-all duration-300;
     box-shadow: var(--shadow-card);
+  }
+
+  .dark .stat-card {
+    @apply bg-card/70 border-white/10;
   }
 
   .stat-card:hover {
     box-shadow: var(--shadow-md);
-    @apply border-border;
+    @apply -translate-y-0.5 border-primary/20;
   }
 
   .nav-item {
-    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-foreground/70 transition-all duration-200;
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sidebar-foreground/70 transition-all duration-200;
   }
 
   .nav-item:hover {
@@ -141,14 +160,37 @@
   }
 
   .table-container {
-    @apply bg-card rounded-xl border border-border/50 overflow-hidden;
+    @apply bg-white/70 backdrop-blur-sm rounded-2xl border border-white/60 overflow-hidden;
     box-shadow: var(--shadow-card);
+  }
+
+  .dark .table-container {
+    @apply bg-card/70 border-white/10;
+  }
+
+  /* 玻璃卡片 */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 4px 24px -4px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 22, 18, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px -4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 }
 
 @layer utilities {
   .gradient-primary {
     background: var(--gradient-primary);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
   }
 
   .shadow-card {
@@ -158,26 +200,28 @@
   .shadow-elevated {
     box-shadow: var(--shadow-lg);
   }
+
+  .shadow-orange {
+    box-shadow: var(--shadow-orange);
+  }
 }
 
 /* ========================================
-   登录页面样式 - 玻璃拟态风格
+   登录页面样式
    ======================================== */
 
 .login-page {
   background: linear-gradient(135deg,
-    hsl(var(--background)) 0%,
-    hsl(28 20% 96%) 50%,
-    hsl(40 30% 95%) 100%);
+    hsl(38 100% 96%) 0%,
+    hsl(28 80% 94%) 50%,
+    hsl(18 60% 95%) 100%);
 }
 
 .dark .login-page {
   background: linear-gradient(135deg,
-    #1a0a2e 0%,
-    #16213e 25%,
-    #0f3460 50%,
-    #0d3320 75%,
-    #134e4a 100%);
+    hsl(22 50% 8%) 0%,
+    hsl(18 40% 10%) 40%,
+    hsl(28 35% 8%) 100%);
 }
 
 .bg-grid-pattern {
@@ -194,24 +238,24 @@
 }
 
 .login-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   padding: 2.5rem;
   box-shadow:
-    0 20px 60px -15px rgba(0, 0, 0, 0.15),
+    0 20px 60px -15px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(255, 255, 255, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .dark .login-card {
-  background: rgba(30, 30, 46, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(28, 20, 16, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 20px 60px -15px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
@@ -222,18 +266,13 @@
 
 .dark .login-tabs {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .login-tab.active {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(35 90% 50%));
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(38 95% 58%));
   color: hsl(var(--primary-foreground));
-  box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
-}
-
-.dark .login-tab.active {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 2px 12px hsl(var(--primary) / 0.35);
 }
 
 .login-input {
@@ -244,17 +283,17 @@
 
 .login-input:focus {
   border-color: hsl(var(--primary));
-  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.12);
 }
 
 .dark .login-input {
-  background: rgba(40, 40, 60, 0.6);
+  background: rgba(40, 30, 22, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark .login-input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.25);
 }
 
 .register-modal {
@@ -264,6 +303,6 @@
 }
 
 .dark .register-modal {
-  background: rgba(30, 30, 46, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(28, 20, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }

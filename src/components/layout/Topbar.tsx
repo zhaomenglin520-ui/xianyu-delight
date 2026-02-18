@@ -31,13 +31,13 @@ export function Topbar({ sidebarCollapsed }: TopbarProps) {
         // 响应侧边栏宽度
         sidebarCollapsed ? "md:left-16" : "md:left-64",
         "left-0",
-        // 浅色模式 - 玻璃拟态
-        "bg-white/40 backdrop-blur-[20px] backdrop-saturate-[180%]",
-        "border-b border-white/30",
-        "shadow-[inset_0_-1px_0_rgba(255,255,255,0.3)]",
+        // 浅色模式 - 暖白玻璃拟态
+        "bg-white/50 backdrop-blur-[24px] backdrop-saturate-[180%]",
+        "border-b border-white/60",
+        "shadow-[0_1px_20px_rgba(0,0,0,0.05),inset_0_-1px_0_rgba(255,255,255,0.5)]",
         // 深色模式
-        "dark:bg-[rgba(30,30,46,0.5)] dark:backdrop-blur-[12px] dark:backdrop-saturate-100",
-        "dark:border-white/10 dark:shadow-none"
+        "dark:bg-[rgba(28,20,14,0.55)] dark:backdrop-blur-[16px]",
+        "dark:border-white/8 dark:shadow-[0_1px_20px_rgba(0,0,0,0.3)]"
       )}
     >
       {/* 左侧标题 */}
@@ -63,14 +63,14 @@ export function Topbar({ sidebarCollapsed }: TopbarProps) {
 
         {/* 消息数量 */}
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm">
-          <MessageSquare className="w-4 h-4 text-blue-500" />
-          <span className="text-blue-600 dark:text-blue-400 font-medium">
+          <MessageSquare className="w-4 h-4 text-primary" />
+          <span className="text-primary font-medium">
             {statusData.messageCount}
           </span>
         </div>
 
         {/* 主题切换 */}
-        <ThemeToggle className="h-9 w-9 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-transform duration-200 hover:-translate-y-px" />
+        <ThemeToggle className="h-9 w-9 rounded-xl hover:bg-primary/8 dark:hover:bg-white/5 transition-transform duration-200 hover:-translate-y-px" />
 
         {/* 退出登录按钮 */}
         <Button
@@ -80,7 +80,7 @@ export function Topbar({ sidebarCollapsed }: TopbarProps) {
             "h-9 px-3 rounded-xl gap-2",
             "text-muted-foreground hover:text-destructive",
             "dark:text-white/70 dark:hover:text-red-400",
-            "hover:bg-black/5 dark:hover:bg-white/5",
+            "hover:bg-destructive/5 dark:hover:bg-white/5",
             "transition-all duration-200 hover:-translate-y-px"
           )}
         >

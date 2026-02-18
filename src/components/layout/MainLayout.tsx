@@ -26,33 +26,33 @@ export function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <div className="min-h-screen w-full relative">
-      {/* 背景渐变 */}
+      {/* 背景渐变 - 暖橙色系 */}
       <div
         className={cn(
           "fixed inset-0 -z-20",
-          // 浅色模式渐变 - 按文档要求
-          "bg-gradient-to-br from-[#f3e8ff] via-[#e0e7ff] via-50% via-[#ddd6fe] to-[#fce7f3]",
+          // 浅色模式 - 暖橙渐变
+          "bg-gradient-to-br from-[#fff7ed] via-[#ffedd5] via-40% to-[#fef3c7]",
           // 深色模式渐变
-          "dark:bg-gradient-to-br dark:from-[#1a0a2e] dark:via-[#16213e] dark:via-50% dark:via-[#0f3460] dark:to-[#0d3320]"
+          "dark:bg-gradient-to-br dark:from-[#1c1208] dark:via-[#1e1408] dark:via-50% dark:to-[#1c1a08]"
         )}
       />
 
-      {/* 网格背景 - 20px × 20px */}
+      {/* 网格背景 - 24px × 24px */}
       <div
         className={cn(
           "fixed inset-0 -z-10 pointer-events-none",
-          // 浅色模式 - 白色40%透明度
-          "bg-[linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)]",
-          // 深色模式 - 白色5%透明度
-          "dark:bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]",
-          "bg-[size:20px_20px]"
+          // 浅色模式 - 橙调白色网格
+          "bg-[linear-gradient(rgba(251,146,60,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(251,146,60,0.08)_1px,transparent_1px)]",
+          // 深色模式 - 极淡网格
+          "dark:bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]",
+          "bg-[size:24px_24px]"
         )}
       />
 
-      {/* 装饰性光晕 */}
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-[#667eea]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="fixed bottom-0 left-1/4 w-[400px] h-[400px] bg-[#764ba2]/15 rounded-full blur-[100px] pointer-events-none -z-10" />
-      <div className="fixed top-1/2 left-0 w-[300px] h-[300px] bg-[#667eea]/8 rounded-full blur-[100px] pointer-events-none -z-10" />
+      {/* 装饰性暖光晕 */}
+      <div className="fixed top-0 right-0 w-[520px] h-[520px] rounded-full blur-[130px] pointer-events-none -z-10 bg-primary/10" />
+      <div className="fixed bottom-0 left-1/4 w-[420px] h-[420px] rounded-full blur-[110px] pointer-events-none -z-10 bg-primary/[0.12]" />
+      <div className="fixed top-1/2 left-0 w-[300px] h-[300px] rounded-full blur-[100px] pointer-events-none -z-10 bg-primary/[0.07]" />
 
       {/* 侧边栏 - 桌面端显示 */}
       <Sidebar
