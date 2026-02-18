@@ -26,13 +26,13 @@ export function MobileNav() {
       className={cn(
         "md:hidden fixed bottom-0 left-0 right-0 z-30",
         "h-16 flex items-stretch",
-        // 浅色模式 - 玻璃拟态
-        "bg-white/70 backdrop-blur-[20px] backdrop-saturate-[180%]",
-        "border-t border-white/50",
-        "shadow-[0_-4px_20px_rgba(0,0,0,0.08)]",
+        // 浅色模式 - 暖白玻璃拟态
+        "bg-white/75 backdrop-blur-[24px] backdrop-saturate-[180%]",
+        "border-t border-white/60",
+        "shadow-[0_-4px_24px_rgba(0,0,0,0.07)]",
         // 深色模式
-        "dark:bg-[rgba(30,30,46,0.8)] dark:backdrop-blur-[12px]",
-        "dark:border-white/10"
+        "dark:bg-[rgba(28,20,14,0.85)] dark:backdrop-blur-[16px]",
+        "dark:border-white/8"
       )}
     >
       {mobileNavItems.map((item) => {
@@ -45,7 +45,7 @@ export function MobileNav() {
               "flex-1 flex flex-col items-center justify-center gap-1 relative",
               "transition-all duration-200",
               isActive
-                ? "text-[#667eea] dark:text-[#667eea]"
+                ? "text-primary dark:text-primary"
                 : "text-muted-foreground dark:text-white/50"
             )}
           >
@@ -53,7 +53,7 @@ export function MobileNav() {
               <item.icon className={cn("w-5 h-5", isActive && "scale-110")} />
               {/* 消息徽章 */}
               {item.badge && item.badge > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-[9px] text-white flex items-center justify-center font-semibold">
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full gradient-warm text-[9px] text-white flex items-center justify-center font-semibold">
                   {item.badge > 9 ? "9+" : item.badge}
                 </span>
               )}
@@ -63,7 +63,7 @@ export function MobileNav() {
             </span>
             {/* 激活指示器 */}
             {isActive && (
-              <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full bg-gradient-to-r from-[#667eea] to-[#764ba2]" />
+              <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full gradient-warm" />
             )}
           </Link>
         );

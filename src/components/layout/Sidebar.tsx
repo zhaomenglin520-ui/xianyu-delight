@@ -56,24 +56,24 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
       className={cn(
         "hidden md:flex h-screen flex-col fixed left-0 top-0 z-30",
         "transition-all duration-200 ease-[cubic-bezier(0.4,0,0.2,1)]",
-        // 浅色模式 - 玻璃拟态
-        "bg-white/40 backdrop-blur-[20px] backdrop-saturate-[180%]",
-        "border-r border-white/50",
-        "shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]",
+        // 浅色模式 - 暖白玻璃拟态
+        "bg-white/50 backdrop-blur-[24px] backdrop-saturate-[180%]",
+        "border-r border-white/60",
+        "shadow-[2px_0_20px_rgba(0,0,0,0.06),inset_-1px_0_0_rgba(255,255,255,0.7)]",
         // 深色模式
-        "dark:bg-[rgba(30,30,46,0.6)] dark:backdrop-blur-[12px] dark:backdrop-saturate-100",
-        "dark:border-r dark:border-white/10 dark:shadow-none",
+        "dark:bg-[rgba(28,20,14,0.65)] dark:backdrop-blur-[16px]",
+        "dark:border-r dark:border-white/8 dark:shadow-[2px_0_20px_rgba(0,0,0,0.4)]",
         collapsed ? "w-16" : "w-64"
       )}
     >
       {/* Logo 区域 */}
-      <div className="h-14 flex items-center gap-3 px-4 border-b border-white/30 dark:border-white/10 flex-shrink-0">
-        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center flex-shrink-0 shadow-lg">
+      <div className="h-14 flex items-center gap-3 px-4 border-b border-white/40 dark:border-white/8 flex-shrink-0">
+        <div className="w-9 h-9 rounded-xl gradient-warm flex items-center justify-center flex-shrink-0 shadow-orange">
           <Fish className="w-5 h-5 text-white" />
         </div>
         {!collapsed && (
           <div className="animate-fade-in overflow-hidden">
-            <span className="font-semibold text-foreground dark:text-white text-lg whitespace-nowrap">
+            <span className="text-lg font-semibold text-foreground dark:text-white whitespace-nowrap">
               闲鱼智能管理系统
             </span>
           </div>
@@ -82,7 +82,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
 
       {/* 导航菜单 */}
       <ScrollArea className="flex-1 py-3">
-        <nav className="px-2 space-y-1">
+        <nav className="px-2 space-y-0.5">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -96,19 +96,19 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                   collapsed ? "justify-center" : "",
                   isActive
                     ? [
-                        // 激活状态 - 渐变背景
-                        "bg-gradient-to-r from-[rgba(102,126,234,0.35)] to-[rgba(118,75,162,0.3)]",
-                        "text-foreground dark:text-white font-medium",
-                        "shadow-[0_2px_8px_rgba(102,126,234,0.3)]",
-                        // 左侧渐变边框
+                        // 激活状态 - 暖橙渐变背景
+                        "bg-gradient-to-r from-primary/20 to-primary/10",
+                        "text-primary dark:text-primary font-medium",
+                        "shadow-[0_2px_12px_hsl(var(--primary)/0.2)]",
+                        // 左侧暖橙边框
                         "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2",
                         "before:w-[3px] before:h-[60%] before:rounded-full",
-                        "before:bg-gradient-to-b before:from-[#667eea] before:to-[#764ba2]",
+                        "before:gradient-warm before:bg-gradient-to-b before:from-primary before:to-primary/70",
                       ]
                     : [
                         "text-muted-foreground hover:text-foreground",
                         "dark:text-white/60 dark:hover:text-white",
-                        "hover:bg-black/5 dark:hover:bg-white/5",
+                        "hover:bg-primary/5 dark:hover:bg-white/5",
                         "hover:translate-x-0.5",
                       ]
                 )}
@@ -122,7 +122,7 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                     {/* 未读消息徽章 */}
                     {item.badge && item.badge > 0 && (
                       <Badge
-                        className="h-5 min-w-[20px] px-1.5 text-[10px] font-semibold bg-gradient-to-r from-red-500 to-pink-500 text-white border-0"
+                        className="h-5 min-w-[20px] px-1.5 text-[10px] font-semibold gradient-warm text-white border-0"
                       >
                         {item.badge > 99 ? "99+" : item.badge}
                       </Badge>
@@ -131,13 +131,13 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
                 )}
                 {/* 折叠时的徽章 */}
                 {collapsed && item.badge && item.badge > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-[10px] text-white flex items-center justify-center font-semibold">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full gradient-warm text-[10px] text-white flex items-center justify-center font-semibold">
                     {item.badge > 9 ? "9+" : item.badge}
                   </span>
                 )}
-                {/* 折叠时激活指示器 - 小三角 */}
+                {/* 折叠时激活指示器 */}
                 {collapsed && isActive && (
-                  <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#667eea]" />
+                  <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-primary" />
                 )}
               </Link>
             );
@@ -146,15 +146,15 @@ export function Sidebar({ collapsed, onCollapsedChange }: SidebarProps) {
       </ScrollArea>
 
       {/* 折叠按钮 */}
-      <div className="p-2 border-t border-white/30 dark:border-white/10 flex-shrink-0">
+      <div className="p-2 border-t border-white/40 dark:border-white/8 flex-shrink-0">
         <button
           onClick={() => onCollapsedChange(!collapsed)}
           className={cn(
             "w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl",
             "transition-all duration-200 ease-[cubic-bezier(0.4,0,0.2,1)]",
-            "text-muted-foreground hover:text-foreground",
-            "dark:text-white/50 dark:hover:text-white",
-            "hover:bg-black/5 dark:hover:bg-white/5",
+            "text-muted-foreground hover:text-primary",
+            "dark:text-white/50 dark:hover:text-primary",
+            "hover:bg-primary/8 dark:hover:bg-white/5",
             "active:scale-[0.98]"
           )}
         >
